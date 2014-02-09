@@ -1,4 +1,4 @@
-// note: jQuery references have been replace with jqAjax to avoid conflicts
+// note: jQuery references have been replaced with jqAjax to avoid conflicts
 
 /*!
  * jQuery JavaScript Library v@VERSION

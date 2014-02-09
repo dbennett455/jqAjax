@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script src="jqAjax.js" data-cover></script>
+  </head>
+  <body>
+	  <script>
+		  jqAjax(document).ready(function(){
+			  jqAjax.ajax({
+				  url: 'test.json',
+				  type: 'get',
+				  dataType: 'json',
+				  success: function(data){
+				  	alert('success:'+data.record.name);
+			      },
+			      error: function(xhr,status){
+			    	alert('error:'+status);
+			      },
+			      complete: function(xhr,status){
+			    	alert('complete:'+status);
+			      }
+		      });
+		  });
+	  </script>
+  </body>
+</html>

@@ -23,8 +23,7 @@ var state = {
   CODE: 0,				// code line
   COMMENT: 1,			// comment line
   HEADER: 2,			// header comment line
-  LINE_COMMENT: 3,		// line comment
-  NO_CONFLICT: 4		// noConflict method
+  NO_CONFLICT: 3		// noConflict method
 };
 
 // output a header
@@ -53,7 +52,7 @@ rl.createInterface({
   // if we are in code and find // then it's a line comment
   if (state.curr === state.CODE) {
     if (l.match(/^\s*\/\//) != null) {
-      state.curr=state.LINE_COMMENT;
+      state.curr=state.COMMENT;
     }
   }
 
@@ -80,7 +79,8 @@ rl.createInterface({
   }
 
   // If we are in code or line_comment then rewrite jQuery references
-  if (state.curr == state.CODE || state.curr == state.LINE_COMMENT) {
+  // leave the header comments alone
+  if (state.curr == state.CODE || state.curr == state.COMMENT) {
     l = l.replace(/jQuery/g,customName);
     l = l.replace(/jquery/g,customName.toLowerCase());
   }
@@ -98,7 +98,7 @@ rl.createInterface({
   }
 
   // if state is line comment then next line is code
-  if (state.curr === state.LINE_COMMENT)
+  if (state.curr === state.COMMENT)
     state.curr = state.CODE;
 
 });

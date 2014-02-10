@@ -72,13 +72,14 @@ rl.createInterface({
       l = l.replace(/^/,'//');
     }
 
+    // change the global definition to remove $ global
     if (l.match(/window\.jQuery\s*=\s*window\.\$\s*=\s*jQuery/) != null) {
       l = l.replace(/window\.jQuery\s*=\s*window\.\$\s*=\s*jQuery/,'window.jQuery = jQuery');
     }
 
   }
 
-  // If we are in code or line_comment the rewrite jQuery references
+  // If we are in code or line_comment then rewrite jQuery references
   if (state.curr == state.CODE || state.curr == state.LINE_COMMENT) {
     l = l.replace(/jQuery/g,customName);
     l = l.replace(/jquery/g,customName.toLowerCase());

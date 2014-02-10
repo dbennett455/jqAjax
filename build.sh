@@ -11,3 +11,5 @@ cd $baseDir
 ./extract.sh
 ./modify.js ${customName} < jQuery_ajax_only.js > ${customName}.js
 ./compile.sh ${customName}
+diff -uw jQuery_ajax_only.js ${customName}.js > ${customName}.patch
+

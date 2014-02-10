@@ -1,5 +1,5 @@
---- jQuery_ajax_only.js	2014-02-10 04:11:40.110227100 -0600
-+++ jqAjax.js	2014-02-10 04:11:40.369299900 -0600
+--- jQuery_ajax_only.js	2014-02-10 04:28:49.010563900 -0600
++++ jqAjax.js	2014-02-10 04:28:49.264953800 -0600
 @@ -1,3 +1,5 @@
 +// NOTE: jQuery references have been changed to jqAjax to avoid conflicts with existing configurations.
 +

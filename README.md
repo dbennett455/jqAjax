@@ -5,7 +5,8 @@ This is the jQuery AJAX functions only.  Extracted from jQuery 1.8.3.   It is de
 
 Naruto Shippuden posted a [entry on his blog](http://noypi-linux.blogspot.com/2013/05/build-jquery-with-ajax-only.html) discussing this technique.  It compiles down much smaller than the new jQuery custom build with ajax only (37k smaller).  It contains good support for older browsers and a good implementation of the newer features such as the AJAX promise interface.
 
-There is some hand editing between the extraction from the jquery sources and the compilation of the minified version.  Namely the renaming of jQuery refences to jqAjax to avoid conflicts and the removal of the global $ identifier and the noConflict() method (which is no longer needed).  I have included a patch file that documents the changes.
+The renaming of jQuery refences to jqAjax and the removal of the global $ identifier and the noConflict() method (which is no longer needed).
+is handled by the modify.js script which runs under node.js.
 
 Required to build:
   - Build is dependent on Linux system.  Cygwin or other Unix might work but hasn't been tested
@@ -17,7 +18,7 @@ To Build:
 
 ```
   ./build.sh {optional script base name}
-```  
+```
 
 TODO:
   - port the ajax portions of the qunit test over.

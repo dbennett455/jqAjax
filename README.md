@@ -7,9 +7,19 @@ Naruto Shippuden posted a [entry on his blog](http://noypi-linux.blogspot.com/20
 
 There is some hand editing between the extraction from the jquery sources and the compilation of the minified version.  Namely the renaming of jQuery refences to jqAjax to avoid conflicts and the removal of the global $ identifier and the noConflict() method (which is no longer needed).  I have included a patch file that documents the changes.
 
+Required to build:
+  - Build is dependent on Linux system.  Cygwin or other Unix might work but hasn't been tested
+  - You will need to check out the jquery source from github and 1.8.3 version tag.
+  - extract.sh expects jquery source to be in ../jquery
+  - You will need to have node.js installed to run modify.js to modify the source referneces.
+
+To Build:
+
+```
+  ./build.sh {optional script base name}
+```  
 
 TODO:
-  - write a script to automate the modifications (changing jQuery to jqAjax and removing $ and noConflict()
   - port the ajax portions of the qunit test over.
 
 
